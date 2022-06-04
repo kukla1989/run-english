@@ -1,0 +1,10 @@
+
+<%=#"hello world".play('eng') %>
+<h2>show exact article</h2>
+	<%= @article.title %><br>
+	<%= @article.body %>
+	<br>
+	<%= link_to "new_article", new_article_path%>
+	<br>
+<%= render @article.sentences %>
+
