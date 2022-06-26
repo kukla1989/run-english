@@ -7,18 +7,24 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def run_english
+    @article = Article.find(params[:id])
+  end
+
   def new
     @article = Article.new
   end
 
 def create
     @article = Article.new(article_params)
-
     if @article.save
-      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      @article.body.split('.').each do |str|
-        Sentence.new(sentence_eng: str, article_id: @article.id).save
+      eng_sentences = @article.body.split('.')
+      ru_sentences = @article.body_ru.split('.')
+      eng_sentences.size.times do|i|
+        Sentence.new(sentence_eng: eng_sentences[i], sentence_ua: ru_sentences[i], article_id: @article.id).save
       end
+
+
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -29,7 +35,7 @@ def create
 
 private
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :body_ru)
   end
 
   

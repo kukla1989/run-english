@@ -1,1 +1,0 @@
-p "String Counting".count('ing')

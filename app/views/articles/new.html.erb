@@ -3,5 +3,10 @@
   <%= form.text_field :title %> <br>
     <%= form.label :body %>
   <%= form.text_area :body, size: "60x10" %>
+    <br>
+      <%= form.label :body_ru %>
+  <%= form.text_area :body_ru, size: "60x10" %>
+  <br>
   <%= form.submit %>
 <% end %>
+<%= link_to 'all articles', articles_path, :style =>'margin:7px'%>

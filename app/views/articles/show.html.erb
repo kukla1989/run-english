@@ -3,8 +3,16 @@
 <h2>show exact article</h2>
 	<%= @article.title %><br>
 	<%= @article.body %>
+	<%= @article.body_ru %>
 	<br>
 	<%= link_to "new_article", new_article_path%>
 	<br>
-<%= render @article.sentences %>
+	<%= button_to "run english on this article", run_english_path, params:{id: @article}, :method => "get" %>
+	<br>
+<h4> divided by sentences</h4>
+
+
+ <%= link_to 'all articles', articles_path, :style =>'margin:7px' %>
+
+
 
