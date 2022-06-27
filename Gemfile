@@ -75,3 +75,4 @@ group :test do
 end
 
 gem "tts", "~> 0.8.2"
+gem "espeak-ruby", require: "espeak"
