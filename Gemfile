@@ -69,7 +69,7 @@ group :development do
 end
 group :production do
   gem "pg"
-  gem "espeak-ruby", require: "espeak"
+
 end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
@@ -77,5 +77,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+  gem "espeak-ruby", require: "espeak"
 
 
