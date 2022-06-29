@@ -1,4 +1,6 @@
+
 class ArticlesController < ApplicationController
+  include ESpeak
   def index
     @articles = Article.all
   end
