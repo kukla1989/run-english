@@ -1,10 +1,15 @@
 <h3>run english</h3>
-<%= @article.sentences[0].sentence_eng%>
+<!--  @article.sentences[0].sentence_eng%> -->
 
-<%speech = ESpeak::Speech.new("espeak-ruby is a small Ruby API f80 utilizing espeak.",
-                            voice: "en-us", pitch: 65, speed: 130) %>
-<%= speech.speak  %>
+<%= @sentence %>
+<%= @speech.speak %>
 
+
+<%= button_to "previous sentence ", run_english_path, params: {id: @article,
+               navigation: @navigation - 1}, :method => "get" %>
+<!-- button_to "pronounce", onClick = @speech.speak %> -->
+<%= button_to "next sentence ", run_english_path, params: {id: @article,
+              navigation: @navigation + 1}, :method => "get" %>
 
 <br><br>
 <%= link_to "all articles", articles_path %>

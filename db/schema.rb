@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_165820) do
 
   create_table "sentences", force: :cascade do |t|
     t.text "sentence_eng"
-    t.text "sentence_ua"
+    t.text "sentence_ru"
     t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

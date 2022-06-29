@@ -7,12 +7,16 @@
 	<br>
 	<%= link_to "new_article", new_article_path%>
 	<br>
-	<%= button_to "run english on this article", run_english_path, params:{id: @article}, :method => "get" %>
+	<%= button_to "run english on this article", run_english_path,
+								params:{id: @article, navigation: 0},
+								:method => "get" %>
 	<br>
+
 <h4> divided by sentences</h4>
 
 
  <%= link_to 'all articles', articles_path, :style =>'margin:7px' %>
 
+	<%= link_to "destroy this article", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
 
